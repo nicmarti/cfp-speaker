@@ -67,8 +67,30 @@ npm install grunt-contrib-compass --save-dev
 - npm update
  - it update **node_modules** directory
 
-##Support##
-- [Best practices] [4]
+## How to deploy on CloudBees
+
+- go to the cfp-speaker folder
+- prepare a dist
+```
+grunt --force
+```
+- add a dist/main.js file for Jenkins (after the grunt build):
+```
+sed 's/8000/process.env.PORT/g' web-server.js > dist/main.js
+```
+- launch the Cloud bees deploy command
+```
+nicolas@macbook (master):~/Dev/CloudBees/cfp-speaker> bees app:deploy dist  -ep eu
+Enter application ID (ex: account/appname) : devoxx/devoxx.fr
+Deploying application devoxx/devoxx.fr (environment: ): deploy.zip
+........................uploaded 25%
+........................uploaded 50%
+........................uploaded 75%
+........................upload completed
+deploying application to server(s)...
+Application devoxx/devoxx.fr deployed: http://devoxx.fr.devoxx.eu.cloudbees.net
+```
+
 
 [![Built on CloudBees](http://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png)](https://devoxx.ci.cloudbees.com/job/cfp-speaker/)
 
