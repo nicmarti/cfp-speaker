@@ -10,14 +10,14 @@ cfpSpeakerAppModule.controller('LostPasswordCtrl', ['$scope', 'AnonymousService'
             .success(function () {
                 $scope.feedback = {
                     type: 'info',
-                    message: 'An email with instructions on how to reset your password has been sent to the provided email address.'
+                    message: 'Nous venons de vous envoyer un email à l\'adresse spécifiée. Vérifiez vos mails'
                 }
 
             })
             .error(function () {
                 $scope.feedback = {
                     type: 'error',
-                    message: 'We couldn\'t find your email address in our systems. Please your input and try again'
+                    message: 'Désolé, nous ne connaissons pas cette adresse email.'
                 }
             });
 

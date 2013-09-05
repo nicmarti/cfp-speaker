@@ -133,32 +133,26 @@
                     <a href="https://regbe.devoxx.com/public#FR14">Acheter des tickets</a>
                     </li>
                     <li class="btn popup login btn_grey" ng-hide="model.currentUser()" ng-class="{'open':model.loginRequested}">
-                        <a>Login</a>
+                        <a>Accès speaker</a>
                         
                         <ul ng-class="{'visible':model.loginRequested}">
                             <li> 
                                 <div class="popup">
+                                    <p>Envie de proposer un sujet ou de suivre vos soumissions ?</p>
                                     <form ng-submit="login()" class="clearfix" autocomplete="off">
                                         <div class="alert alert-error" ng-show="model.loginError">{{model.loginError}}
                                         </div>
-                                        <input type="text" name="login" value="" placeholder="E-mail"
+                                        <input type="text" name="login" value="" placeholder="Email ou username"
                                                ng-model="model.email"/>
-                                        <input type="password" name="pass" value="" placeholder="Password"
+                                        <input type="password" name="pass" value="" placeholder="Mot de passe"
                                                ng-model="model.password" devoxx-on-return-key="login()"/>
                                         <a href="#/register" class="btnRegister">S'enregistrer</a>
                                         <input type="submit" name="submit" value="Login" class="btn"
                                                ng-disabled="model.loginDisabled"/>
                                     </form>
 
-                                    <div class="connect clearfix hidden">
-                                        <a href="#" class="btnFacebook">Facebook</a>
-                                        <a href="#" class="btnTwitter">Twitter</a>
-                                        <a href="#" class="btnLinkedin">LinkedIn</a>
-                                        <a href="#" class="btnGoogle">Google+</a>
-                                    </div>
-
                                     <div class="actionslinks clearfix">
-                                        <a href="#/lost_password" class="btnForgot">Password oublié</a>
+                                        <a href="#/lost_password" class="btnForgot">Mot de passe oublié</a>
                                     </div>
                                 </div>
                             </li>
