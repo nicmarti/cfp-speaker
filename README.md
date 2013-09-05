@@ -1,6 +1,9 @@
 ![Build status](https://devoxx.ci.cloudbees.com/job/cfp-speaker/badge/icon)
 
-Devoxx Call For Papers Application: Proposal module
+# Devoxx France web site and Call For Paper application
+
+This is the main Devoxx France web site content, and the CFP application.
+
 This application can be used to handle CFP requests, targeted at the Devoxx REST interface v2.
 
 Used technologies:
@@ -17,16 +20,30 @@ Used technologies:
 
 #Setup global env
 
-- Install [nodejs] [1]
- - It comes with [npm] [2]
-- Have a look to [yeoman] [3]: it helps to scallfold an angular project with best practices
-- [sudo] npm install -g yo grunt-cli bower generator-angular generator-karma
+- Install [nodejs] [http://nodejs.org/]
+- It comes with [npm] [2]
+- Have a look to [yeoman] : it helps to scallfold an angular project with best practices
+- once npm has been installed, install yeoman, angular generator and some other required nodejs tools with sudo:
+```
+sudo npm install -g yo 
+sudo npm install -g grunt-cli bower generator-angular generator-karma
+```
+
+Note: for grunt on MacOSX I had to update the PATH...
+
+# Git
+- checkout from Git the cfp-speaker project
+
 
 #Setup project env
-- cd path/to/project
+- cd cfp-speaker
 - npm install && bower install
  - *npm install* is configured with **package.json** and generates the directory **node_modules**
  - *bower* is configured with **bower.json** or **bower.json** and generates the directory **app/components**
+- install also compass 
+```
+npm install grunt-contrib-compass --save-dev
+```
 
 ##Starts your application##
 

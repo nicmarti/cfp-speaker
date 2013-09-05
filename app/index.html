@@ -8,8 +8,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>DEVOXX</title>
-    <meta name="description" content="">
+    <title>DEVOXX France</title>
+    <meta name="description" content="La conférence des développeurs passionnés">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     
@@ -81,22 +81,26 @@
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!-- Devoxx FR Google Analytics - configured by Nicolas -->
+<script type="text/javascript">
 
-        ga('create', 'UA-41435900-1', 'devoxx.be');
-        ga('send', 'pageview');
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28379425-1']);
+  _gaq.push(['_setDomainName', 'devoxx.fr']);
+  _gaq.push(['_trackPageview']);
 
-    </script>
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </head>
 <body ng-app="cfpSpeakerApp">
 <!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
-    improve your experience.</p>
+<p class="chromeframe">Désolé, votre navigateur est trop ancien pour ce site. Prenez le temps d'installer un <a href="http://browsehappy.com/">nouveau navigateur web</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">d'installer Google Chrome Frame</a> pour visiter notre site devoxx france.</p>
 <![endif]-->
 
 <header>
@@ -108,25 +112,25 @@
 
             <nav class="" ng-controller="LoginCtrl" ng-cloak="ng-cloak">
                 <ul>
-                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/">Accueil</a></li>
                     <li class="submenu subleft">
-                        <a href="#">Program</a>
+                        <a href="#">Programme</a>
                         <ul>
-                            <li><a href="/dv13-schedule.html">Schedule</a></li>
-                            <li><a href="/dv13-speakers.html">Devoxxians</a></li>
+                            <li><a href="/dv13-schedule-fr.html">Agenda</a></li>
+                            <li><a href="/dv13-speakers-fr.html">Speakers</a></li>
                         </ul>
                     </li>
                     <li class="submenu subright">
-                        <a>Practical</a>
+                        <a>Infos pratiques</a>
                         <ul>
-                            <li><a href="#/faq">FAQ</a></li>
-                            <li><a href="#/team">Team</a></li>
-                            <li><a href="#/venue">Venue</a></li>
                             <li><a href="#/contact">Contact</a></li>
+                            <li><a href="#/team">Equipe</a></li>
+                            <li><a href="#/venue">Lieu</a></li>
+                            <li><a href="#/faq">Questions</a></li>
                         </ul>
                     </li>
                     <li class="btn hide_mobile">
-                    <a href="https://regbe.devoxx.com/public#DV13">Buy tickets</a>
+                    <a href="https://regbe.devoxx.com/public#DV13">Acheter des tickets</a>
                     </li>
                     <li class="btn popup login btn_grey" ng-hide="model.currentUser()" ng-class="{'open':model.loginRequested}">
                         <a>Login</a>
@@ -141,7 +145,7 @@
                                                ng-model="model.email"/>
                                         <input type="password" name="pass" value="" placeholder="Password"
                                                ng-model="model.password" devoxx-on-return-key="login()"/>
-                                        <a href="#/register" class="btnRegister">Register</a>
+                                        <a href="#/register" class="btnRegister">S'enregistrer</a>
                                         <input type="submit" name="submit" value="Login" class="btn"
                                                ng-disabled="model.loginDisabled"/>
                                     </form>
@@ -154,7 +158,7 @@
                                     </div>
 
                                     <div class="actionslinks clearfix">
-                                        <a href="#/lost_password" class="btnForgot">Forgot password</a>
+                                        <a href="#/lost_password" class="btnForgot">Password oublié</a>
                                     </div>
                                 </div>
                             </li>
@@ -164,7 +168,7 @@
                         <a>{{model.currentUser().firstname}} {{model.currentUser().lastname}} <img src="images/User-icon.png" height="10" width="10" style="margin-top: -1px;"></a>
                         <ul>
                             <li><a href="#/speaker" ng-click="logout()">Logout</a></li>
-                            <li><a href="#/speaker/proposals">Proposals</a></li>
+                            <li><a href="#/speaker/proposals">Propositions</a></li>
                             <li><a href="#/speaker/profile">Profile</a></li>
                         </ul>
                     </li>
@@ -243,43 +247,40 @@
 
         <div class="row">
             <div class="col5">
-                <h4>Site map</h4>
+                <h4>Plan du site</h4>
                 <ul>
-                    <li><a href="/#/team">Team</a></li>
-                    <li><a href="/#/contact">Contact Us</a></li>
-                    <li><a href="/#/about">About CFP</a></li>
-                    <li><a href="/#/venue">Venue</a></li>
-                    <li><a href="/#/faq">FAQ</a></li>
-                    <li><a href="/#/sponsors">Sponsorships</a></li>
-                    <li><a href="/dv13-schedule.html">Schedule</a></li>
-                    <li><a href="/dv13-speakers.html">Speakers</a></li>
+                    <li><a href="/#/team">Equipe</a></li>
+                    <li><a href="/#/contact">Nous contacter</a></li>
+                    <li><a href="/#/about">A propos</a></li>
+                    <li><a href="/#/venue">Lieu</a></li>
+                    <li><a href="/#/faq">Questions</a></li>
+                    <li><a href="/#/sponsors">Sponsors et exposants</a></li>
+                    <li><a href="/dv13-schedule.html">Agenda</a></li>
+                    <li><a href="/dv13-speakers.html">Orateurs</a></li>
                 </ul>
             </div>
 
             <div class="col5">
-                <h4>previous editions</h4>
+                <h4>éditions précédentes</h4>
                 <ul>
-                    <li><a href="http://devoxx.com/display/DV12/Home">Edition 2012</a></li>
-                    <li><a href="http://devoxx.com/display/DV11/Home">Edition 2011</a></li>
-                    <li><a href="http://devoxx.com/display/Devoxx2K10/Home">Edition 2010</a></li>
-                    <li><a href="http://devoxx.com/display/DV09/Home">Edition 2009</a></li>
+                    <li><a href="http://devoxx.com/display/FR13/Accueil">Edition Devoxx FR 2013</a></li>
+                    <li><a href="http://devoxx.com/display/FR12/Accueil">Edition Devoxx FR 2012</a></li>
                 </ul>
             </div>
 
             <div class="col5">
-                <h4>Other countries</h4>
+                <h4>Autres conférences</h4>
                 <ul>
-                    <li><a href="http://www.devoxx.com/display/FR13/Accueil">Devoxx France</a></li>
+                    <li><a href="http://www.devoxx.be">Devoxx Belgique</a></li>
                     <li><a href="http://www.devoxx.com/display/UK13/Home">Devoxx UK</a></li>
                 </ul>
             </div>
 
             <div class="col5">
-                <h4>Keep in touch</h4>
+                <h4>Contacts</h4>
                 <ul>
-                    <li><a href="https://www.facebook.com/devoxxcom">Facebook</a></li>
-                    <li><a href="https://twitter.com/devoxx">Twitter</a></li>
-                    <li><a href="http://eepurl.com/d35a9">Newsletter</a></li>
+                    <li><a href="https://twitter.com/devoxxfr">Twitter</a></li>
+                    <li><a href="http://eepurl.com/g6k9o">Lettre d'info FR</a></li>
                 </ul>
             </div>
         </div>
@@ -288,7 +289,7 @@
 <div id="sponsors" class="white sponsors">
     <div class="grid">
         <div class="row">
-            <div class="col5" align="center">
+           <!-- <div class="col5" align="center">
                 <a href="http://www.oracle.com/us/technologies/java/overview/index.html" target="_blank"><img
                         src="images/sponsors/oracle.png" alt="Oracle"/></a>
             </div>
@@ -301,8 +302,10 @@
             <div class="col5" align="center">
                 <a href="http://www.jetbrains.com" target="_blank"><img src="images/sponsors/jetbrains.png" alt="JetBrains"/></a>
             </div>
+            -->
         </div>
         <div class="row">
+          <!--
             <div class="col5" align="center">
                 <a href="https://www.smals.be/nl" target="_blank"><img src="images/sponsors/smals.png" alt="Smals"/></a>
             </div>
@@ -315,8 +318,10 @@
             <div class="col5" align="center">
                 <a href="http://www.vaadin.com/" target="_blank"><img src="images/sponsors/vaadin.png" alt="Vaadin"/></a>
             </div>
+            -->
         </div>
         <div class="row">
+           <!--
             <div class="col5" align="center">
                 <a href="http://www.aca-it.be" target="_blank"><img src="images/sponsors/aca.png" alt="ACA IT solutions"/></a>
             </div>
@@ -329,9 +334,10 @@
             <div class="col5" align="center">
                 <a href="http://www.eclipse.org/org/foundation/" target="_blank"><img src="images/sponsors/eclipse.png" alt="Eclipse"/></a>
             </div>
+        -->
         </div>
         <div class="row">
-            <div class="col5" align="center">
+          <!--  <div class="col5" align="center">
                 <a href="http://www.typesafe.com" target="_blank"><img src="images/sponsors/typesafe.png" alt="Typesafe"/></a>
             </div>
             <div class="col5" align="center">
@@ -343,8 +349,10 @@
             <div class="col5" align="center">
                 <a href="http://www.atalasoft.com/" target="_blank"><img src="images/sponsors/atalasoft.png" alt="Atalasoft"/></a>
             </div>
+        -->
         </div>
         <div class="row">
+          <!--
             <div class="col5" align="center">
                 <a href="http://xplore.be/" target="_blank"><img src="images/sponsors/xplore.png" alt="XPLORE"/></a>
             </div>
@@ -356,6 +364,7 @@
             </div>
             <div class="col5" align="center">
             </div>
+        -->
         </div>
     </div>
 </div>
@@ -364,7 +373,7 @@
     <div class="grid">
         <div class="row">
             <div class="col11">
-                <a href="/agreement.html">Waiver of liability and indemnity agreement</a>
+                <a href="/agreement.html">Mentions légales (EN)</a>
             </div>
             <div class="col9">
                 design by <a href="http://www.three-sixty.be" target="_blank">Three-Sixty Media</a>
@@ -372,7 +381,5 @@
         </div>
     </div>
 </div>
-
 </body>
-
 </html>
