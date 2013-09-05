@@ -2,8 +2,8 @@
     <div class="grid">
         <div class="row">
             <div class="col16">
-                <h1>Profile</h1>
-                <h3>Your Devoxxian profile</h3>
+                <h1>Orateur à Devoxx</h1>
+                <h3>Présentez-vous en quelques mots</h3>
             </div>
         </div>
     </div>
@@ -16,8 +16,8 @@
                 <div class="row" ng-hide="profileComplete">
                     <div class="col12">
                         <p class="label label-danger">
-                            <h4>Your profile is not yet complete.</h4>
-                            To continue, please fill in the missing values in the form below.
+                            <h4>Votre profil n'est pas encore complet.</h4>
+                            Afin de terminer, merci de compléter maintenant votre profil. Lors de la sélection des sujets, nous refuserons les présentateurs n'ayant pas complété leur profil. Le texte et le profil sont utilisés pour vous présenter, dans la partie Speaker, ainsi que sur le programme papier. Bref, prenez le temps de bien rédiger et de vérifier votre présentation.
                         </p>
                         <hr>
                     </div>
@@ -25,8 +25,8 @@
                 <div class="row" ng-show="profileComplete">
                     <div class="col12">
                         <p class="label label-danger">
-                            <h4>Your profile is complete.</h4>
-                            Go to the <a href="#/speaker/proposals">proposals section</a> to submit or review a previously submitted talk.
+                            <h4>Votre profil est complet</h4>
+                            Allez dans la section <a href="#/speaker/proposals">propositions</a> pour poster un sujet, ou pour suivre la validation de vos sujets.
                         </p>
                         <hr>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="col6 push6">
                         <ul>
                             <li class="btn">
-                                <input type="submit" ng-click="updateProfile()" value="Update">
+                                <input type="submit" ng-click="updateProfile()" value="Modifier">
                             </li>
                         </ul>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="col12" ng-show="feedback">
                         <div class="alert alert-{{feedback.type}}" ng-show="feedback">{{feedback.message}}</div>
                         <p class="label label-danger" ng-show="profileComplete">                            
-                            Go to the <a href="#/speaker/proposals">proposals section</a> to submit or review a previously submitted talk.
+                            Allez dans la section <a href="#/speaker/proposals">propositions</a> pour continuer.
                         </p>
                     </div>                    
                 </div>

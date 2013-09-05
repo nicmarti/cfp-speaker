@@ -2,8 +2,8 @@
     <div class="grid">
         <div class="row">
             <div class="col16">
-                <h1>New to Devoxx?</h1>
-                <h3>Register yourself here</h3>
+                <h1>Nouveau à Devoxx ?</h1>
+                <h3>Inscrivez-vous pour pouvoir proposer des sujets (CFP)</h3>
             </div>
         </div>
     </div>
@@ -15,47 +15,47 @@
         <form ng-hide="feedback.type == 'info'" name="registerForm" ng-submit="register()">
             <div class="row">
                 <div class="col12">                
-                    <h4>Enter your details, all fields are mandatory</h4>
+                    <h4>Merci de compléter chaque champ</h4>
                     <ul>
                         <li>
-                            <label for="registerFirstname">First name</label>
+                            <label for="registerFirstname">Votre prénom</label>
                             <input id="registerFirstname" type="text" ng-model="model.newUser.firstname" required devoxx-uniform>
                         </li>
 
                         <li>
-                            <label for="registerLastname">Last name</label>
+                            <label for="registerLastname">Nom de famille</label>
                             <input id="registerLastname" type="text" ng-model="model.newUser.lastname" required devoxx-uniform>
                         </li>
 
                         <li>
-                            <label for="registerEmail">Email address</label>
+                            <label for="registerEmail">Votre adresse email</label>
                             <input id="registerEmail" type="email" ng-model="model.newUser.email" required devoxx-uniform>
                         </li>
                         <li>
-                            <label for="registerEmail">Email address again</label>
+                            <label for="registerEmail">Merci de saisir à nouveau votre email</label>
                             <input id="registerEmail" type="email" ng-model="model.newUser.email2" required devoxx-uniform>
                         </li>
                         <li>
                             <label></label>
-                            <div class="alert alert-danger" ng-hide='registerForm.$pristine || emailsMatch()'>Email addresses must match!</div>
+                            <div class="alert alert-danger" ng-hide='registerForm.$pristine || emailsMatch()'>Les 2 adresses doivent correspondre</div>
                         </li>
 
                         <li>
-                            <label for="registerUsername">Username</label>
+                            <label for="registerUsername">Nom d'utilisateur</label>
                             <input id="registerUsername" type="text" ng-model="model.newUser.username" required devoxx-uniform>
                         </li>
 
                         <li>
-                            <label for="registerPassword">Password</label>
+                            <label for="registerPassword">Mot de passe</label>
                             <input id="registerPassword" type="password" ng-model="model.newUser.password" required devoxx-uniform>
                         </li>
                         <li>
-                            <label for="registerPassword">Password again</label>
+                            <label for="registerPassword">Mot de passe à nouveau</label>
                             <input id="registerPassword" type="password" ng-model="model.newUser.password2" required devoxx-uniform>
                         </li>                        
                         <li>
                             <label></label>
-                            <div class="alert alert-danger" ng-hide='registerForm.$pristine || passwordsMatch()'>Passwords must match!</div>
+                            <div class="alert alert-danger" ng-hide='registerForm.$pristine || passwordsMatch()'>Les mots de passe doivent correspondre</div>
                         </li>
                     </ul>
                 </div>
@@ -70,7 +70,7 @@
                 <div class="col6 push6">
                     <ul>
                         <li class="btn">
-                            <input type="submit" name="" value="Register" ng-disabled="!hasNoTypo()">
+                            <input type="submit" name="" value="Valider" ng-disabled="!hasNoTypo()">
                         </li>
                     </ul>
                 </div>

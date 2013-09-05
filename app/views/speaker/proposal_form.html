@@ -2,8 +2,8 @@
     <div class="grid">
         <div class="row">
             <div class="col9">
-                <h1>Call for Papers</h1>
-                <h3>make a difference @ Devoxx</h3>
+                <h1>Call for Papers [CFP]</h1>
+                <h3>Original, passionné et engagé</h3>
             </div>
             <div class="col11">
                 <img src="../../images/topinfo_visual_call.png" class="visual" alt=""/>
@@ -19,7 +19,7 @@
             devoxx-set-focus-on="isSubmitted"
             devoxx-set-focus-field="sendingProposalMessage">
             <!-- an anchor is required for setting focus. Focus is used to scroll to the message -->
-            <a href="" id="sendingProposalMessage">Sending your proposal...</a>
+            <a href="" id="sendingProposalMessage">Envoi de votre sujet en cours...</a>
         </h4>
 
         <form name="submitProposalForm" onsubmit="return false" ng-cloak ng-hide="isSubmitted">
@@ -30,18 +30,18 @@
             </div>
             <div class="row">
                 <div class="col16">
-                    <h4>Proposal</h4>
+                    <h4>Proposer un sujet pour Devoxx</h4>
                     <input type="text" ng-model="model.talk.id" style="display: none">
                     <ul>
                         <li>
-                            <label for="talkEvent">Event</label>
+                            <label for="talkEvent">Evénément</label>
                             <select name="event"
                                     id="talkEvent" ng-model="model.talk.event"
                                     ng-options="e.name for e in model.events"
                                     required
                                     ng-hide="model.events.length == 1"
                                     devoxx-uniform>
-                                <option value="">Choose event</option>
+                                <option value="">Choisir une conférence</option>
                             </select>
                             <input type="text"
                                    ng-disabled="true"
